@@ -1,0 +1,320 @@
+{
+    "info": {
+        "_postman_id": "a1d04c35-d8da-4971-84c3-1388c6536a08",
+        "name": "ATTO",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "description": ""
+    },
+    "item": [
+        {
+            "name": "Customer",
+            "item": [
+                {
+                    "name": "Register",
+                    "request": {
+                        "method": "POST",
+                        "url": {
+                            "raw": "http://localhost:3000/customer/register",
+                            "path": [
+                                "customer",
+                                "register"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "3000"
+                        },
+                        "header": [
+                            {
+                                "key": "Accept-Language",
+                                "value": "ru"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": "{\n    \"name\": \"Abror\",\n    \"phone\": \"998993669806\",\n    \"password\": \"Hello1234\"\n}"
+                        }
+                    }
+                },
+                {
+                    "name": "Login",
+                    "request": {
+                        "method": "POST",
+                        "url": {
+                            "raw": "http://localhost:3000/customer/login",
+                            "path": [
+                                "customer",
+                                "login"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "3000"
+                        },
+                        "header": [
+                            {
+                                "key": "Accept-Language",
+                                "value": "ru"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": "{\n    \"phone\": \"998993669806\",\n    \"password\": \"Test1234\"\n}"
+                        }
+                    }
+                },
+                {
+                    "name": "Get profile",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "http://localhost:3000/customer/profile",
+                            "path": [
+                                "customer",
+                                "profile"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "3000"
+                        },
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "edc19358-dcea-4466-b454-63925328c18e"
+                            },
+                            {
+                                "key": "Accept-Language",
+                                "value": "ru"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "name": "Update user",
+                    "request": {
+                        "method": "PUT",
+                        "url": {
+                            "raw": "http://localhost:3000/customer/profile",
+                            "path": [
+                                "customer",
+                                "profile"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "3000"
+                        },
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "709a1022-a392-4bd6-8a2d-e8e9b88336af"
+                            },
+                            {
+                                "key": "Accept-Language",
+                                "value": "ru"
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "name",
+                                    "value": "Mirabror",
+                                    "type": "default"
+                                },
+                                {
+                                    "key": "password",
+                                    "value": "Test1234",
+                                    "type": "default"
+                                },
+                                {
+                                    "key": "deletePhoto",
+                                    "value": "true",
+                                    "type": "default"
+                                },
+                                {
+                                    "key": "avatar",
+                                    "src": "/Users/zeyds/Documents/Photo.png",
+                                    "disabled": true,
+                                    "type": "file"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Get photo",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "http://localhost:3000/customer/photo/2666b99d-88d8-4de6-b363-3a4ac3c6a5f8.png",
+                            "path": [
+                                "customer",
+                                "photo",
+                                "2666b99d-88d8-4de6-b363-3a4ac3c6a5f8.png"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "3000"
+                        },
+                        "header": [
+                            {
+                                "key": "Accept-Language",
+                                "value": "ru"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Cards",
+            "item": [
+                {
+                    "name": "Create",
+                    "request": {
+                        "method": "POST",
+                        "url": {
+                            "raw": "http://localhost:3000/customer/card/create",
+                            "path": [
+                                "customer",
+                                "card",
+                                "create"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "3000"
+                        },
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "edc19358-dcea-4466-b454-63925328c18e"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": "{\n  \"name\": \"My Uzcard\",\n  \"pan\": \"8600552579883112\",\n  \"expiry_month\": \"9\",\n  \"expiry_year\": \"24\"\n}"
+                        }
+                    }
+                },
+                {
+                    "name": "Get Customer Cards",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "http://localhost:3000/customer/card/all",
+                            "path": [
+                                "customer",
+                                "card",
+                                "all"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "3000"
+                        },
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "edc19358-dcea-4466-b454-63925328c18e"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "name": "Update",
+                    "request": {
+                        "method": "PUT",
+                        "url": {
+                            "raw": "http://localhost:3000/customer/card/update",
+                            "path": [
+                                "customer",
+                                "card",
+                                "update"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "3000"
+                        },
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "edc19358-dcea-4466-b454-63925328c18e"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": "{\n  \"id\": \"b2ea4189-fb80-4eaf-a4f5-93b5e44cedea\",\n  \"name\": \"to delete\"\n}"
+                        }
+                    }
+                },
+                {
+                    "name": "Delete",
+                    "request": {
+                        "method": "DELETE",
+                        "url": {
+                            "raw": "http://localhost:3000/customer/card/delete",
+                            "path": [
+                                "customer",
+                                "card",
+                                "delete"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "3000"
+                        },
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "edc19358-dcea-4466-b454-63925328c18e"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": "{\n  \"id\": \"b2ea4189-fb80-4eaf-a4f5-93b5e44cedea\"\n}"
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}
