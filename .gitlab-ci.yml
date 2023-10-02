@@ -1,0 +1,32 @@
+stages:
+  - build
+  - test
+  - deploy
+
+build-job:
+  stage: build
+  script:
+    - echo "Building the application..."
+    - docker-compose build express-app
+    - echo "Build complete."
+
+unit-test-job:
+  stage: test
+  script:
+    - echo "Running unit tests..."
+    - docker-compose run express-app npm test
+    - echo "Unit tests completed."
+
+lint-test-job:
+  stage: test
+  script:
+    - echo "Linting code..."
+    - docker-compose run express-app npm run lint
+    - echo "Linting completed."
+
+deploy-job:
+  stage: deploy
+  script:
+    - echo "Deploying application..."
+    - docker-compose up -d express-app
+    - echo "Application successfully deployed."
