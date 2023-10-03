@@ -21,7 +21,7 @@ services:
 
   postgres:
     image: postgres:alpine
-    container_name: postgre
+    container_name: postgres
     environment:
       POSTGRES_DB: postgres
       POSTGRES_USER: postgres
